@@ -17,6 +17,7 @@ jobs:
 
   staging:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
     needs:
       - test
     environment:
@@ -31,6 +32,7 @@ jobs:
 
   prod:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
     needs:
       - staging
     environment:
